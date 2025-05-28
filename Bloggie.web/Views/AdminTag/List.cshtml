@@ -1,0 +1,44 @@
+﻿@model List<Bloggie.web.Models.Domain.Tag>
+
+<div class="bg-secondary bg-opacity-10 py-2">
+	<div class="container">
+		<h1>
+			Add New Tag - Admin Functionality
+		</h1>
+	</div>
+</div>
+
+<div class="container py-5">
+	@if(Model != null && Model.Any())
+	{
+		<table class="table">
+			<thead></thead>
+			<tr>
+				<th>ID</th>
+				<th>Name</th>
+				<th>Display Name</th>
+				<th> </th>
+			</tr>
+			<tbody>
+				@foreach(var tag in Model)
+				{
+					<tr>
+						<td>@tag.Id</td>
+						<td>@tag.Name</td>
+						<td>@tag.DisplayName</td>
+						<td>
+							<a asp-area="" 
+							asp-controller="AdminTag"
+							asp-action="Edit">Edit</a>
+						</td>
+					</tr>
+				}
+			</tbody>
+		</table>
+	}
+	else
+	{
+		<h1>Sorry, No Tags were found!</h1>
+	}
+
+</div>
