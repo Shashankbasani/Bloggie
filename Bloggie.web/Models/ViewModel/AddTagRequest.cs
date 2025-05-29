@@ -6,7 +6,7 @@ namespace Bloggie.web.Models.ViewModel
     {
         [Required] 
         public string Name { get; set; }
-        [Required]
+        [Required]       
         public string DisplayName { get; set; }
     }
 }
